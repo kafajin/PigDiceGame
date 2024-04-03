@@ -60,10 +60,6 @@ class Game:
         self.high_scores.update_high_scores(winner.name, winner.get_score())
 
         # Display the scores
-<<<<<<< HEAD
         self.high_scores.display_high_scores()
 
         #testar att commita
-=======
-        self.high_scores.display_high_scores()
->>>>>>> 55c0f29b696d17664f2c9fa63084cf4f05b5b815
