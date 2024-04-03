@@ -61,5 +61,3 @@ class Game:
 
         # Display the scores
         self.high_scores.display_high_scores()
-
-        #testar att commita
