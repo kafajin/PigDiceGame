@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>player API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>player</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import sys
+
+
+class Player:
+    &#34;&#34;&#34;Class representing a player in the Pig Dice Game.
+
+    Attributes:
+        name (str): The name of the player.
+        score (int): The current score of the player.
+    &#34;&#34;&#34;
+
+    def __init__(self, name):
+        &#34;&#34;&#34;Initialize a player with a given name and a starting score of 0.&#34;&#34;&#34;
+        self.name = name
+        self.score = 0
+
+    def reset_score(self):
+        &#34;&#34;&#34;Reset the player&#39;s score to 0.&#34;&#34;&#34;
+        self.score = 0
+
+    def add_score(self, points):
+        &#34;&#34;&#34;Add points to the player&#39;s score.
+
+        Args:
+            points (int): The points to add to the player&#39;s score.
+        &#34;&#34;&#34;
+        self.score += points
+
+    def get_score(self):
+        &#34;&#34;&#34;Get the player&#39;s current score.
+
+        Returns:
+            int: The player&#39;s current score.
+        &#34;&#34;&#34;
+        return self.score
+
+    def take_turn(self, dice):
+        &#34;&#34;&#34;Simulate the player&#39;s turn in the game.
+
+        Args:
+            dice (Dice): The instance of the Dice class used in the game.
+
+        Returns:
+            bool: False if the player&#39;s turn is over, True otherwise.
+        &#34;&#34;&#34;
+        print(f&#34;It&#39;s {self.name}&#39;s turn.&#34;)
+
+        roll = input(&#34;Roll, hold, quit or cheat? (r/h/q/c): &#34;).lower()
+        if roll == &#39;r&#39;:
+            dice_roll = dice.roll_dice()
+            print(f&#34;{self.name} rolled a {dice_roll}.&#34;)
+            if dice_roll == 1:
+                print(&#34;A 1 is rolled. No points gained this turn.&#34;)
+                self.reset_score()
+                return False
+
+            else:
+                self.add_score(dice_roll)
+                print(f&#34;Your current score: {self.get_score()}&#34;)
+        elif roll == &#39;h&#39;:
+            print(f&#34;{self.name} chose to hold.&#34;)
+            return False
+        elif roll == &#39;q&#39;:
+            print(&#34;Quiting the game. Thanks for playing&#34;)
+            sys.exit()
+        elif roll == &#39;c&#39;:
+            print(&#34;Cheat code activated...&#34;)
+            self.score = 100
+            
+            return False
+        else:
+            print(&#34;Invalid input. Please enter &#39;r&#39; to roll or &#39;h&#39; to hold or &#39;q&#39; to quit.&#34;)
+
+    def select_name(self):
+        &#34;&#34;&#34;Prompt the player to enter their name.&#34;&#34;&#34;
+        human_name = input(&#34;\nPlease enter your name: &#34;)
+        if not human_name:
+            print(&#34;Name cannot be empty &#34;)
+        else:
+            self.name = human_name
+            print(f&#34;Player&#39;s name set to {human_name}.&#34;)
+
+    def change_name(self, new_playername):
+        &#34;&#34;&#34;Change the player&#39;s name to a new name.
+
+        Args:
+            new_playername (str): The new name for the player.
+
+        Raises:
+            ValueError: If the new name is empty.
+        &#34;&#34;&#34;
+        if not new_playername:
+            raise ValueError(&#34;Name cannot be empty. Please enter a name.&#34;)
+        else:
+            old_name = self.name
+            self.name = new_playername
+            print(f&#34;Player&#39;s name changed from {old_name} to {new_playername}&#34;)
+
+    def hold(self):
+        &#34;&#34;&#34;End the player&#39;s turn and add the round score to the player&#39;s total score.&#34;&#34;&#34;
+        self.round_score = 0
+        self.score += self.round_score</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="player.Player"><code class="flex name class">
+<span>class <span class="ident">Player</span></span>
+<span>(</span><span>name)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Class representing a player in the Pig Dice Game.</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>name</code></strong> :&ensp;<code>str</code></dt>
+<dd>The name of the player.</dd>
+<dt><strong><code>score</code></strong> :&ensp;<code>int</code></dt>
+<dd>The current score of the player.</dd>
+</dl>
+<p>Initialize a player with a given name and a starting score of 0.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Player:
+    &#34;&#34;&#34;Class representing a player in the Pig Dice Game.
+
+    Attributes:
+        name (str): The name of the player.
+        score (int): The current score of the player.
+    &#34;&#34;&#34;
+
+    def __init__(self, name):
+        &#34;&#34;&#34;Initialize a player with a given name and a starting score of 0.&#34;&#34;&#34;
+        self.name = name
+        self.score = 0
+
+    def reset_score(self):
+        &#34;&#34;&#34;Reset the player&#39;s score to 0.&#34;&#34;&#34;
+        self.score = 0
+
+    def add_score(self, points):
+        &#34;&#34;&#34;Add points to the player&#39;s score.
+
+        Args:
+            points (int): The points to add to the player&#39;s score.
+        &#34;&#34;&#34;
+        self.score += points
+
+    def get_score(self):
+        &#34;&#34;&#34;Get the player&#39;s current score.
+
+        Returns:
+            int: The player&#39;s current score.
+        &#34;&#34;&#34;
+        return self.score
+
+    def take_turn(self, dice):
+        &#34;&#34;&#34;Simulate the player&#39;s turn in the game.
+
+        Args:
+            dice (Dice): The instance of the Dice class used in the game.
+
+        Returns:
+            bool: False if the player&#39;s turn is over, True otherwise.
+        &#34;&#34;&#34;
+        print(f&#34;It&#39;s {self.name}&#39;s turn.&#34;)
+
+        roll = input(&#34;Roll, hold, quit or cheat? (r/h/q/c): &#34;).lower()
+        if roll == &#39;r&#39;:
+            dice_roll = dice.roll_dice()
+            print(f&#34;{self.name} rolled a {dice_roll}.&#34;)
+            if dice_roll == 1:
+                print(&#34;A 1 is rolled. No points gained this turn.&#34;)
+                self.reset_score()
+                return False
+
+            else:
+                self.add_score(dice_roll)
+                print(f&#34;Your current score: {self.get_score()}&#34;)
+        elif roll == &#39;h&#39;:
+            print(f&#34;{self.name} chose to hold.&#34;)
+            return False
+        elif roll == &#39;q&#39;:
+            print(&#34;Quiting the game. Thanks for playing&#34;)
+            sys.exit()
+        elif roll == &#39;c&#39;:
+            print(&#34;Cheat code activated...&#34;)
+            self.score = 100
+            
+            return False
+        else:
+            print(&#34;Invalid input. Please enter &#39;r&#39; to roll or &#39;h&#39; to hold or &#39;q&#39; to quit.&#34;)
+
+    def select_name(self):
+        &#34;&#34;&#34;Prompt the player to enter their name.&#34;&#34;&#34;
+        human_name = input(&#34;\nPlease enter your name: &#34;)
+        if not human_name:
+            print(&#34;Name cannot be empty &#34;)
+        else:
+            self.name = human_name
+            print(f&#34;Player&#39;s name set to {human_name}.&#34;)
+
+    def change_name(self, new_playername):
+        &#34;&#34;&#34;Change the player&#39;s name to a new name.
+
+        Args:
+            new_playername (str): The new name for the player.
+
+        Raises:
+            ValueError: If the new name is empty.
+        &#34;&#34;&#34;
+        if not new_playername:
+            raise ValueError(&#34;Name cannot be empty. Please enter a name.&#34;)
+        else:
+            old_name = self.name
+            self.name = new_playername
+            print(f&#34;Player&#39;s name changed from {old_name} to {new_playername}&#34;)
+
+    def hold(self):
+        &#34;&#34;&#34;End the player&#39;s turn and add the round score to the player&#39;s total score.&#34;&#34;&#34;
+        self.round_score = 0
+        self.score += self.round_score</code></pre>
+</details>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="computer_intelligence.ComputerIntelligence" href="computer_intelligence.html#computer_intelligence.ComputerIntelligence">ComputerIntelligence</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="player.Player.add_score"><code class="name flex">
+<span>def <span class="ident">add_score</span></span>(<span>self, points)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Add points to the player's score.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>points</code></strong> :&ensp;<code>int</code></dt>
+<dd>The points to add to the player's score.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_score(self, points):
+    &#34;&#34;&#34;Add points to the player&#39;s score.
+
+    Args:
+        points (int): The points to add to the player&#39;s score.
+    &#34;&#34;&#34;
+    self.score += points</code></pre>
+</details>
+</dd>
+<dt id="player.Player.change_name"><code class="name flex">
+<span>def <span class="ident">change_name</span></span>(<span>self, new_playername)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Change the player's name to a new name.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>new_playername</code></strong> :&ensp;<code>str</code></dt>
+<dd>The new name for the player.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>ValueError</code></dt>
+<dd>If the new name is empty.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def change_name(self, new_playername):
+    &#34;&#34;&#34;Change the player&#39;s name to a new name.
+
+    Args:
+        new_playername (str): The new name for the player.
+
+    Raises:
+        ValueError: If the new name is empty.
+    &#34;&#34;&#34;
+    if not new_playername:
+        raise ValueError(&#34;Name cannot be empty. Please enter a name.&#34;)
+    else:
+        old_name = self.name
+        self.name = new_playername
+        print(f&#34;Player&#39;s name changed from {old_name} to {new_playername}&#34;)</code></pre>
+</details>
+</dd>
+<dt id="player.Player.get_score"><code class="name flex">
+<span>def <span class="ident">get_score</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get the player's current score.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>int</code></dt>
+<dd>The player's current score.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_score(self):
+    &#34;&#34;&#34;Get the player&#39;s current score.
+
+    Returns:
+        int: The player&#39;s current score.
+    &#34;&#34;&#34;
+    return self.score</code></pre>
+</details>
+</dd>
+<dt id="player.Player.hold"><code class="name flex">
+<span>def <span class="ident">hold</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>End the player's turn and add the round score to the player's total score.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def hold(self):
+    &#34;&#34;&#34;End the player&#39;s turn and add the round score to the player&#39;s total score.&#34;&#34;&#34;
+    self.round_score = 0
+    self.score += self.round_score</code></pre>
+</details>
+</dd>
+<dt id="player.Player.reset_score"><code class="name flex">
+<span>def <span class="ident">reset_score</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Reset the player's score to 0.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def reset_score(self):
+    &#34;&#34;&#34;Reset the player&#39;s score to 0.&#34;&#34;&#34;
+    self.score = 0</code></pre>
+</details>
+</dd>
+<dt id="player.Player.select_name"><code class="name flex">
+<span>def <span class="ident">select_name</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Prompt the player to enter their name.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def select_name(self):
+    &#34;&#34;&#34;Prompt the player to enter their name.&#34;&#34;&#34;
+    human_name = input(&#34;\nPlease enter your name: &#34;)
+    if not human_name:
+        print(&#34;Name cannot be empty &#34;)
+    else:
+        self.name = human_name
+        print(f&#34;Player&#39;s name set to {human_name}.&#34;)</code></pre>
+</details>
+</dd>
+<dt id="player.Player.take_turn"><code class="name flex">
+<span>def <span class="ident">take_turn</span></span>(<span>self, dice)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Simulate the player's turn in the game.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>dice</code></strong> :&ensp;<code>Dice</code></dt>
+<dd>The instance of the Dice class used in the game.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>bool</code></dt>
+<dd>False if the player's turn is over, True otherwise.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def take_turn(self, dice):
+    &#34;&#34;&#34;Simulate the player&#39;s turn in the game.
+
+    Args:
+        dice (Dice): The instance of the Dice class used in the game.
+
+    Returns:
+        bool: False if the player&#39;s turn is over, True otherwise.
+    &#34;&#34;&#34;
+    print(f&#34;It&#39;s {self.name}&#39;s turn.&#34;)
+
+    roll = input(&#34;Roll, hold, quit or cheat? (r/h/q/c): &#34;).lower()
+    if roll == &#39;r&#39;:
+        dice_roll = dice.roll_dice()
+        print(f&#34;{self.name} rolled a {dice_roll}.&#34;)
+        if dice_roll == 1:
+            print(&#34;A 1 is rolled. No points gained this turn.&#34;)
+            self.reset_score()
+            return False
+
+        else:
+            self.add_score(dice_roll)
+            print(f&#34;Your current score: {self.get_score()}&#34;)
+    elif roll == &#39;h&#39;:
+        print(f&#34;{self.name} chose to hold.&#34;)
+        return False
+    elif roll == &#39;q&#39;:
+        print(&#34;Quiting the game. Thanks for playing&#34;)
+        sys.exit()
+    elif roll == &#39;c&#39;:
+        print(&#34;Cheat code activated...&#34;)
+        self.score = 100
+        
+        return False
+    else:
+        print(&#34;Invalid input. Please enter &#39;r&#39; to roll or &#39;h&#39; to hold or &#39;q&#39; to quit.&#34;)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="player.Player" href="#player.Player">Player</a></code></h4>
+<ul class="two-column">
+<li><code><a title="player.Player.add_score" href="#player.Player.add_score">add_score</a></code></li>
+<li><code><a title="player.Player.change_name" href="#player.Player.change_name">change_name</a></code></li>
+<li><code><a title="player.Player.get_score" href="#player.Player.get_score">get_score</a></code></li>
+<li><code><a title="player.Player.hold" href="#player.Player.hold">hold</a></code></li>
+<li><code><a title="player.Player.reset_score" href="#player.Player.reset_score">reset_score</a></code></li>
+<li><code><a title="player.Player.select_name" href="#player.Player.select_name">select_name</a></code></li>
+<li><code><a title="player.Player.take_turn" href="#player.Player.take_turn">take_turn</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

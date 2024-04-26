@@ -62,7 +62,7 @@ clean-all: clean clean-doc
 #
 pylint:
 	@$(call MESSAGE,$@)
-	-cd game_classes && $(PYTHON) -m pylint *.py
+	-$(PYTHON) -m pylint dice.py game.py main.py player.py computer_intelligence.py  highscore.py
 
 flake8:
 	@$(call MESSAGE,$@)
@@ -76,7 +76,7 @@ lint: flake8 pylint
 #
 black:
 	@$(call MESSAGE,$@)
-	 $(PYTHON) -m black guess/ test/
+	 $(PYTHON) -m black
 
 codestyle: black
 
@@ -104,17 +104,17 @@ test: lint coverage
 pydoc:
 	@$(call MESSAGE,$@)
 	install -d doc/pydoc
-	$(PYTHON) -m pydoc -w game_classes/*.py
+	$(PYTHON) -m pydoc -w *.py
 	mv *.html doc/pydoc
 
 pdoc:
 	@$(call MESSAGE,$@)
-	pdoc --force --html --output-dir doc/pdoc game_classes/*/*.py
+	pdoc --force --html --output-dir doc/pdoc dice.py game.py main.py player.py computer_intelligence.py  highscore.py
 
 pyreverse:
 	@$(call MESSAGE,$@)
-	install -d doc/pyreverse
-	pyreverse -o png --ignore '*test*.py' game_classes
+	mkdir doc/pyreverse
+	pyreverse -o png dice.py game.py main.py player.py computer_intelligence.py  highscore.py
 	dot -Tpng classes.dot -o doc/pyreverse/game_classes.png
 	dot -Tpng packages.dot -o doc/pyreverse/packages.png
 	rm -f game_classes.dot packages.dot
