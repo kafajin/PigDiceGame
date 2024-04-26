@@ -1,3 +1,4 @@
+"""main module"""
 import sys
 from player import Player
 from game import Game
@@ -7,6 +8,7 @@ from highscore import HighScore
 
 
 def main():
+    """Function to start and control the Pig Dice Game."""
     print("------------------------------")
     print("|        Pig Dice Game        |")
     print("------------------------------")
@@ -162,109 +164,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-
-
-# def main():
-#     print("------------------------------")
-#     print("|        Pig Dice Game        |")
-#     print("------------------------------")
-
-#     # Print the rules of the game
-#     print("\nRules of the Pig Dice Game:")
-#     print("Each turn, a player repeatedly rolls a die until either a"
-#           " is rolled or the player decides to 'hold':")
-#     print("- If the player rolls a 1, they score nothing "
-#           "and it becomes the next player's turn.")
-#     print("- If the player rolls any other number,"
-#           "it is added to their turn total and the player's turn continues.")
-#     print("- If a player chooses to 'hold',their turn total is added "
-#           "to their score, and it becomes the next player's turn.")
-#     print("\nThe first player to score 50 or more points wins.")
-
-#     # instantiate HighScore class
-#     high_scores = HighScore()
-
-#     try:
-#         while True:
-#             human_player = Player("")  # Initialize with an empty name
-#             human_player.select_name()  # Human player selects name
-#             print(f"\n- Human Player: {human_player.name}")
-
-#             # Adding an option for the player to change their name
-#             while True:
-#                 change_name_decision = input(
-#                     "Do you want to change your name? (yes/no): ").lower()
-#                 if change_name_decision == "yes":
-#                     new_name = input("Please enter your new name: ")
-#                     try:
-#                         human_player.change_name(new_name)
-#                         print(f"Name changed successfully to {new_name}\n")
-#                     except ValueError as e:
-#                         print(f"Error: {e}")
-#                     break
-#                 elif change_name_decision == "no":
-#                     print("Keeping the current name.")
-#                     break
-#                 else:
-#                     print("Please answer with 'yes' or 'no'.")
-
-#             # Ask for computer difficulty
-#             # loop ensures that the user inputs either 'basic' or 'advanced'
-#             while True:
-#                 choice_difficulty = input(" \nChoose computer difficulty - basic or advanced: ").lower()
-#                 if choice_difficulty in ["basic", "advanced"]:
-#                     break
-#                 else:
-#                     print("Invalid input. Choose 'basic' or 'advanced'.")
-
-#             # Initialize computer player with chosen difficulty
-#             computer_player = ComputerIntelligence(
-#                 difficulty=choice_difficulty)
-
-#             game_instance = Game(
-#                 [human_player, computer_player],
-#                 Dice(), high_scores)
-
-#             # Load high scores
-#             high_scores.load_high_scores()
-
-#             # Play until one player reaches a score of 100
-#             while max(player.score for player in [human_player, computer_player]) < 100:
-#                 if not game_instance.play():
-#                     break  # Exit the loop if the play method returns False
-
-#             # Determine the winner
-#             max_score = max(
-#                 player.score for player in [human_player, computer_player])
-#             winners = [
-#                 player.name
-#                 for player in [human_player, computer_player]
-#                 if player.score == max_score]
-#             print(
-#                 f"\nCongratulations! {' and '.join(winners)} "
-#                 f"won with {max_score} points!")
-
-#             # Display the scores
-#             high_scores.display_high_scores()
-
-#             # Ask if the player wants to play again
-#             while True:
-#                 play_again = input("Do you want to play again? (yes/no): ").lower()
-#                 if play_again == "yes":
-#                     # Restart the game or perform any other necessary action
-#                     print("Restarting the game...")
-#                     break  # Exit the loop and proceed with the game restart
-#                 elif play_again == "no":
-#                     print("Thanks for playing! Goodbye!")
-#                     sys.exit()  # Exit the program
-#                 else:
-#                     print("Invalid input. Please enter 'yes' or 'no'.")
-#     except KeyboardInterrupt:
-#         print("\nGame interrupted. Exiting...")
-#         sys.exit()
-
-
-# if __name__ == "__main__":
-#     main()

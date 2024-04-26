@@ -1,0 +1,11 @@
+[flake8]
+exclude =
+    .git,
+    __pycache__,
+    .venv,
+    */test*
+
+max-line-length = 150
+enable-extensions = pylint,mccabe
+
+ignore = E402
