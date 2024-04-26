@@ -1,6 +1,12 @@
+"""High Score Module
+
+This module contains a class to manage high scores for a game.
+
+"""
+
+
 class HighScore:
     """A class to manage high scores fora game."""
-
     def __init__(self, filename="high_score.txt"):
         """
         Intialize the HighScore object
