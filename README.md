@@ -73,3 +73,9 @@ We welcome contributions to improve the Pig Dice Game! If you have any ideas for
 This project is licensed under the [MIT License](LICENSE).
 
 Enjoy the game, and may the dice roll ever in your favor!
+
+
+
+
+### Important note for the MAKEFILE commands.
+Please use : make -f Makefile (.....) instead of using: make (......) as it didn't work with us using just make
