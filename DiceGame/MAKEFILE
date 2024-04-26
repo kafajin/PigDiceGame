@@ -1,4 +1,3 @@
-
 #!/usr/bin/env make
 
 # Change this to be your variant of the python command
@@ -63,13 +62,23 @@ clean-all: clean clean-doc
 #
 pylint:
 	@$(call MESSAGE,$@)
-	-$(PYTHON) -m pylint *.py
+	-cd game_classes && $(PYTHON) -m pylint *.py
 
 flake8:
 	@$(call MESSAGE,$@)
 	-flake8
 
 lint: flake8 pylint
+
+
+# ---------------------------------------------------------
+# Work with codestyle.
+#
+black:
+	@$(call MESSAGE,$@)
+	 $(PYTHON) -m black guess/ test/
+
+codestyle: black
 
 
 # ---------------------------------------------------------
@@ -81,7 +90,7 @@ unittest:
 
 coverage:
 	@$(call MESSAGE,$@)
-	coverage run -m unittest discover
+	coverage run --omit='*/test*' -m unittest discover
 	coverage html
 	coverage report -m
 
@@ -91,26 +100,26 @@ test: lint coverage
 # ---------------------------------------------------------
 # Work with generating documentation.
 #
-# .PHONY: pydoc
-# pydoc:
-# 	@$(call MESSAGE,$@)
-# 	install -d doc/pydoc
-# 	$(PYTHON) -m pydoc -w pig/*.py
-# 	mv *.html doc/pydoc
+.PHONY: pydoc
+pydoc:
+	@$(call MESSAGE,$@)
+	install -d doc/pydoc
+	$(PYTHON) -m pydoc -w game_classes/*.py
+	mv *.html doc/pydoc
 
 pdoc:
 	@$(call MESSAGE,$@)
-	pdoc --force --html --output-dir doc/pdoc pig/*.py
+	pdoc --force --html --output-dir doc/pdoc game_classes/*/*.py
 
-# pyreverse:
-# 	@$(call MESSAGE,$@)
-# 	install -d doc/pyreverse
-# 	pyreverse pig/*.py
-# 	dot -Tpng classes.dot -o doc/pyreverse/classes.png
-# 	dot -Tpng packages.dot -o doc/pyreverse/packages.png
-# 	rm -f classes.dot packages.dot
+pyreverse:
+	@$(call MESSAGE,$@)
+	install -d doc/pyreverse
+	pyreverse -o png --ignore '*test*.py' game_classes
+	dot -Tpng classes.dot -o doc/pyreverse/game_classes.png
+	dot -Tpng packages.dot -o doc/pyreverse/packages.png
+	rm -f game_classes.dot packages.dot
 
-# doc: pdoc pyreverse #pydoc sphinx
+doc: pdoc pyreverse #pydoc sphinx
 
 
 
@@ -119,23 +128,23 @@ pdoc:
 #
 radon-cc:
 	@$(call MESSAGE,$@)
-	radon cc --show-complexity --average pig
+	radon cc --show-complexity --average game_classes
 
 radon-mi:
 	@$(call MESSAGE,$@)
-	radon mi --show pig
+	radon mi --show game_classes
 
 radon-raw:
 	@$(call MESSAGE,$@)
-	radon raw pig
+	radon raw game_classes
 
 radon-hal:
 	@$(call MESSAGE,$@)
-	radon hal pig
+	radon hal game_classes
 
 cohesion:
 	@$(call MESSAGE,$@)
-	cohesion --directory pig
+	cohesion game_classes/**/*.py
 
 metrics: radon-cc radon-mi radon-raw radon-hal cohesion
 
@@ -146,4 +155,4 @@ metrics: radon-cc radon-mi radon-raw radon-hal cohesion
 #
 bandit:
 	@$(call MESSAGE,$@)
-	bandit --recursive pig
+	bandit --recursive game_classes
