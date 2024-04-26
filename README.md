@@ -40,6 +40,26 @@ To play the game:
 - High score tracking to keep track of the best performances.
 - Option to restart the game or exit after each round.
 
+## Computer Intelligence
+
+The computer player in the Pig Dice Game is implemented using the `ComputerIntelligence` class. This class represents a computer player with different levels of intelligence, allowing for varying degrees of challenge in the game.
+
+### Implementation Details
+
+The `ComputerIntelligence` class extends the `Player` class and introduces the concept of difficulty levels. Currently, two difficulty levels are supported: "basic" and "advanced".
+
+- In the basic strategy, the computer player follows a simple threshold approach. If the current score in the round is below a certain threshold (25 by default), the computer player continues to roll the dice. Otherwise, it chooses to hold.
+- The advanced strategy considers the current score of the computer player. If the current score is close to winning (e.g., 75 or higher), the computer player chooses to hold. If the current score is low (e.g., below 30), it continues to roll. Otherwise, it makes a random decision between rolling and holding.
+
+The decision-making process of the computer player is encapsulated in the `take_turn` method. Based on the selected difficulty level, either the basic or advanced strategy is invoked to determine whether the computer player should roll or hold.
+
+### Usage
+
+When starting a new game, players have the option to choose the difficulty level of the computer player. Depending on the chosen difficulty, the computer player will employ either the basic or advanced strategy during its turns.
+
+By providing different levels of intelligence, the computer player adds an element of challenge and variability to the Pig Dice Game, making each gameplay experience unique and engaging.
+
+
 ## Dependencies
 
 This game requires Python 3 to run. There are no additional dependencies.
